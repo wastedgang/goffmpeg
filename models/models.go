@@ -11,7 +11,7 @@ type Metadata struct {
 }
 
 type Streams struct {
-	Index              int
+	Index              int         `json:"index"`
 	ID                 string      `json:"id"`
 	CodecName          string      `json:"codec_name"`
 	CodecLongName      string      `json:"codec_long_name"`
@@ -40,6 +40,10 @@ type Streams struct {
 	Duration           string      `json:"duration"`
 	Disposition        Disposition `json:"disposition"`
 	BitRate            string      `json:"bit_rate"`
+	Tags               struct {
+		Language string `json:"language"`
+		Title    string `json:"title"`
+	} `json:"tags"`
 }
 
 type Disposition struct {
